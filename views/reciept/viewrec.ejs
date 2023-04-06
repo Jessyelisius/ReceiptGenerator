@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciept</title>
+    <style>
+        .cred{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <p>ref: <%= reciepts._id %></p>
+    <center>
+        <img src="<%= compdet.image %> " width="100px" alt="">
+        <h2><%= companysend.Username %> </h2>
+        <p><%= compdet.About %></p>
+        <p><%= compdet.Email +' ~~' %> <% if (compdet.phoneNo) { %>
+            <%= compdet.phoneNo +' ~~' %>
+        <% } %>
+        <% if (compdet.url) { %>
+            <%= compdet.url +' ~~' %>
+        <% } %>
+        <% if (compdet.address) { %>
+            <%= compdet.address %>
+        <% } %></p>
+    </center>
+<% (reciepts.items).forEach(i => { %>
+    <h4><%= i %> </h4>
+    <hr>
+<% }) %>
+<div class="cred">
+    <h4>Name: <strong><u><%= reciepts.customerName %></u></strong> </h4>
+    <h4>Phone No: <strong><u><%= reciepts.customerPhone %></u></strong> </h4>
+</div>
+<div class="cred">
+    <h4>price in words: <strong><u><%= reciepts.TotalpriceText %></u></strong> </h4>
+    <h4>price: <strong><u><%= reciepts.Totalpricenumber %></u></strong> </h4></div>
+    <center>
+<caption>date: <strong><u><%= reciepts.date %></u></strong> </caption>
+        <p onclick="Print()" style="color: blue; cursor: pointer;">print</p>
+    </center>
+</body>
+<script>
+alert('click on print','to save as pdf/print')
+function Print() {
+    window.print()
+}
+</script>
+</html>

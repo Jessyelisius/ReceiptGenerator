@@ -1,0 +1,29 @@
+{
+  "name": "reciept-gen",
+  "version": "1.0.0",
+  "description": "generates reciepts for company",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "Stech",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cloudinary": "^1.31.0",
+    "cors": "^2.8.5",
+    "date-and-time": "^2.4.1",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.6.0",
+    "morgan": "^1.10.0",
+    "node-module": "^2.0.0",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.19",
+    "rand-token": "^1.0.1"
+  }
+}

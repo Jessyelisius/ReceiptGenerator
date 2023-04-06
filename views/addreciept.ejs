@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add reciept</title>
+    <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+    <form action="/addreciept" method="post" class="form" style="height: auto;">
+        <a href="/">back</a>
+        <div class="title">Add Reciept</div>
+        <div class="subtitle"><%= msg %></div>
+        <div onclick="additem()" class="submit" style="height: auto; padding: 10px;">add item</div>
+        <div class="input-container ic1">
+          <input id="firstname" class="input" name="Name" required type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="firstname" class="placeholder">customer</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="lastname" class="input" name="phone" required type="tel" placeholder=" " />
+          <div class="cut"></div>
+          <label for="lastname" class="placeholder">Phone NO</label>
+        </div>
+        <div class="itemdivm" style="border-bottom: solid white 1px;border-top: solid white 1px;">
+
+        </div>
+        <div class="input-container ic2">
+          <input id="email" name="totalText" required class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="email" class="placeholder">Text Price</>
+        </div>
+
+        <div class="input-container ic2">
+            <input id="email" name="totalNum" required class="input" type="number" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="email" class="placeholder">Price</>
+        </div>
+
+        <button type="text" class="submit">submit</button>
+    </form>
+
+<!-- 
+
+
+    <a href="/">home</a>
+    <button onclick="additem()">add item</button>
+    <form action="/addreciept" method="post">
+        <input type="text" name="Name" placeholder="customer name">
+        <br>
+        <br>
+        <input type="tel" name="phone" placeholder="customer Phone">
+        <br>
+        <br>
+        
+        <div class="itemdiv">
+
+        </div>
+        <br>
+        <br>
+        <input type="text" name="totalText" placeholder="total price in text" id="">
+        <br>
+        <input type="number" name="totalNum" placeholder="total in number" id="">
+        <br><br>
+        <button type="submit">create reciept</button>
+    </form> -->
+</body>
+<script>
+    function additem(event) {
+        // event.preventDefault()
+        var div= document.createElement('DIV')
+        div.className= "input-container ic2"
+        // div.appendChild()
+        var x =document.createElement('INPUT')
+        x.setAttribute('type','text')
+        x.setAttribute('name','item[]')
+        x.setAttribute('placeholder',' ')
+        x.className='input'
+        x.id='lastname'
+
+        var div2=document.createElement('DIV')
+        div2.className="cut cut-short"
+
+        var label=document.createElement('LABEL')
+        label.setAttribute('for','item')
+        label.innerHTML='Item'
+        label.className='placeholder'
+        div.appendChild(x)
+        div.appendChild(div2)
+        div.appendChild(label)
+
+        // var br= document.createElement('BR')
+        document.querySelector('.itemdivm').appendChild(div)
+        // document.querySelector('.itemdiv').appendChild
+    }
+</script>
+</html>

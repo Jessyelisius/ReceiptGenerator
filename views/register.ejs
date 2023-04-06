@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+<div class="container">
+  <input type="checkbox" id="check">
+  <div class="login form">
+    <header>Register Company</header>
+    <header><%=msg%></header>
+    <form action="/register" method="post" enctype="multipart/form-data">
+      <input type="text" name="Username" id="" placeholder="Enter your company name" required>
+      <input type="email" name="email" id="" placeholder="Enter your email" required>
+      <input type="password" name="password" id="" placeholder="Enter your password" required>
+      <input type="url" name="website"  placeholder="Enter your website name" required>
+      <input type="text" name="address" id="" placeholder="Enter your address" required>
+      <input type="file" name="image" accept="image/*" placeholder="Enter your logo" required>
+      <textarea name="about" id="email" required cols="30" class="input" placeholder=" " rows="10"></textarea>
+      <a href="#">Forgot password?</a>
+      <!-- <input type="button" class="button" value="Login">
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <label for="check">Login</label> -->
+          <button type="text" class="submit"> submit </button>
+          <h4>Aleady Have an Account? <a href="/login">Login</a></h4>
+          
+      </div> 
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

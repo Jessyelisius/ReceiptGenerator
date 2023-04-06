@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/form.css">
+
+</head>
+<body>
+        <div class="container">
+          <input type="checkbox" id="check">
+          <div class="login form">
+            <header>Welcome Back</header>
+            <header><%=msg%></header>
+            <form action="/login" method="post" enctype="multipart/form-data">
+              <input type="text" name="Username" id="" placeholder="Enter your company name" required>
+              <input type="password" name="password" id="" placeholder="Enter your password" required>
+        
+                  <button type="text" class="submit"> Login </button>
+                  <h4>Don't Have an Account Yet? <a href="/register">Signup</a></h4>
+                  
+              </div> 
+            </form>
+          </div>
+        </div>
+
+    </form>
+
+
+
+
+    <!-- <p><%= msg %> </p>
+    <form action="/login" method="post" >
+        <input type="text" name="Username" placeholder="Username" required>
+        <p>*special Company name only</p>
+        <br><br>
+        <input type="password" name="password" placeholder="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">register</a><br>
+    <a href="/login">login</a> -->
+</body>
+</html>

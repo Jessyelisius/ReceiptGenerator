@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.Username %> Company </title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0px;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            background-color: #f4f4f4;
+            color: #009579;
+            align-items: center;
+            padding: 20px;
+            /* width: 100%; */
+        }
+        .header>img{
+            border-radius: 100%;
+            background-color: black;
+            height: 80px;
+        }
+        .txtt{
+            text-align: center;
+        }
+        .right{
+            display: block;
+            flex-direction: row;
+        }
+        a{
+            color: #009579;
+            margin-right: 8px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #016654;
+            text-align: inherit;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="<%= compDetails.image %> " alt="<%= user.Username %> profile" width="80px">
+        <div class="txtt">
+            <h2><%= user.Username %> Company</h2>
+            <p><%= compDetails.About %></p>
+            <p><%= compDetails.Email +' ||' %> <% if (compDetails.phoneNo) { %>
+                <%= compDetails.phoneNo +' ||' %>
+            <% } %>
+            <% if (compDetails.url) { %>
+                <%= compDetails.url +' ||' %>
+            <% } %>
+            <% if (compDetails.address) { %>
+                <%= compDetails.address %>
+            <% } %>
+            </p>
+        </div>
+
+        <div class="right">
+            <a href="/addreciept">add reciept</a> 
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+    
+    <center>
+        <% if (allreciept.length>=1) { %>
+          
+            <% (allreciept.reverse()).forEach(rc => { %>
+                <hr>
+                
+             <div onclick="change('/reciept/<%= rc._id %>')" style="margin-top: 15px; padding: 10px;">
+
+                <pre><%= rc._id %></pre>
+                <h2><%= rc.customerName %></h2>
+                <h3>price: <%= rc.Totalpricenumber %></h3>
+                <caption><%= rc.date %></caption>
+             </div>
+             <hr>
+            <% }) %>
+        <% } else { %>
+         <h3>No reciept</h3>
+        <% } %>
+    </center>
+    
+</body>
+<script>
+    function change(move) {
+        window.location=move
+    }
+</script>
+</html>
